@@ -13,6 +13,8 @@ public class Sample1 {
 		System.out.println("Hello world8");
 		System.out.println("Hello world9");
 		System.out.println("Hello world10");
+		System.out.println("Hello world11");
+		System.out.println("Hello world12");
 
 	}
 
