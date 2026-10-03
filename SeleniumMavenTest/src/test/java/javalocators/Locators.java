@@ -1,7 +1,5 @@
 package javalocators;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,112 +9,45 @@ public class Locators {
 
     public static void main(String[] args) {
 
-        // Launch Chrome
+        // Launch the Chrome browser
         WebDriver driver = new ChromeDriver();
 
-        // Open Google
-        driver.get("https://www.google.com");
+        // Open the URL
+        driver.get("https://www.Amazon.com/");
 
-        // Maximize browser
-        driver.manage().window().maximize();
+        // Maximize the browser
+        //driver.manage().window().maximize();
 
+        // -------------------------------
+        // 1. ID Locator
+        // -------------------------------
 
-        // =========================================================
-        // 1. NAME LOCATOR
-        // =========================================================
+        //WebElement input = driver.findElement(By.id("ti6dpd"));
 
-        // Google search box has name = "q"
-        driver.findElement(By.name("q")).sendKeys("Selenium Java");
+        //input.sendKeys("You got the id of search");
 
-        // Clear the search box
-        driver.findElement(By.name("q")).clear();
-
-
-        // =========================================================
-        // 2. ID LOCATOR
-        // =========================================================
-
-        // Example of finding an element using ID
-        // Uncomment and inspect Google's current HTML if needed
-
-        // driver.findElement(By.id("someId")).click();
+       // System.out.println("The ID of search is: "
+               // + input.getAttribute("id"));
 
 
-        // =========================================================
-        // 3. CLASSNAME LOCATOR
-        // =========================================================
+        // -------------------------------
+        // 2. XPath Locator
+        // -------------------------------
 
-        List<WebElement> elements =
-                driver.findElements(By.className("g"));
+        //WebElement searchButton = driver.findElement(
+             //   By.xpath("//*[@id='sI1XGe']/div[1]/svg")
+       // );
 
-        System.out.println("Number of elements with class 'g': "
-                + elements.size());
+        //searchButton.click();
+        
+        
+        //3.class
+        String classLocator = driver.findElement(By.className("productTitle"))
+                .getText();
 
+System.out.println("The title is: " + classLocator);
 
-        // =========================================================
-        // 4. TAGNAME LOCATOR
-        // =========================================================
-
-        List<WebElement> links =
-                driver.findElements(By.tagName("a"));
-
-        System.out.println("Total number of links: "
-                + links.size());
-
-
-        // =========================================================
-        // 5. LINKTEXT LOCATOR
-        // =========================================================
-
-        // Example:
-        // driver.findElement(By.linkText("About")).click();
-
-
-        // =========================================================
-        // 6. PARTIALLINKTEXT LOCATOR
-        // =========================================================
-
-        // Example:
-        // driver.findElement(By.partialLinkText("Ab")).click();
-
-
-        // =========================================================
-        // 7. CSS SELECTOR
-        // =========================================================
-
-        // Google search box using CSS selector
-        WebElement searchBox =
-                driver.findElement(By.xpath("//textarea[@id='ti6dpd']"));
-
-        searchBox.sendKeys("pavan");
-
-        System.out.println("Search box displayed: "
-                + searchBox.isDisplayed());
-
-
-        // =========================================================
-        // 8. XPATH LOCATOR
-        // =========================================================
-
-        WebElement searchBox2 =
-                driver.findElement(By.xpath("//textarea[@name='q']"));
-
-        System.out.println("Search box enabled: "
-                + searchBox2.isEnabled());
-
-
-        // =========================================================
-        // 9. FIND MULTIPLE ELEMENTS
-        // =========================================================
-
-        List<WebElement> allImages =
-                driver.findElements(By.tagName("img"));
-
-        System.out.println("Total number of images: "
-                + allImages.size());
-
-
-        // Close browser
+        // Close the browser
         //driver.quit();
     }
 }
