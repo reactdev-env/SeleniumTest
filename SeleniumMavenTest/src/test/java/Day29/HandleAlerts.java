@@ -21,7 +21,7 @@ public class HandleAlerts {
    
    Alert myalert = driver.switchTo().alert();
    
-   //Get alert text
+   
    
    System.out.println(myalert.getText());
    
